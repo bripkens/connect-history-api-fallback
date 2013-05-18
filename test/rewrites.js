@@ -37,7 +37,7 @@ tests.setUp = function (done) {
 });
 
 
-tests['should ignore requests that do not accept html directory'] = function (test) {
+tests['should ignore requests that do not accept html'] = function (test) {
   req.headers.accept = 'application/json';
 
   historyApiFallback(req, null, next);
@@ -57,6 +57,7 @@ tests['should ignore file requests'] = function (test) {
   test.ok(nextCalled);
   test.done();
 };
+
 
 tests['should rewrite valid requests'] = function (test) {
   historyApiFallback(req, null, next);
