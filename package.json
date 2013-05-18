@@ -1,0 +1,16 @@
+{
+  "name": "connect-history-api-fallback",
+  "version": "0.0.1",
+  "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": "",
+  "author": "Ben Ripkens",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  }
+}
