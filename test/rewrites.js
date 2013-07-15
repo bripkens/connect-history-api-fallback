@@ -11,6 +11,7 @@ var next = function () {
 
 
 tests.setUp = function (done) {
+  historyApiFallback.setLogger(console.log.bind(console));
   req = {
     method: 'GET',
     url: requestedUrl,
