@@ -48,3 +48,13 @@ var historyApiFallback = require('connect-history-api-fallback');
 var app = express();
 app.use(historyApiFallback);
 ```
+
+Activate logging of rewrite reasons:
+
+```
+var historyApiFallback = require('connect-history-api-fallback');
+historyApiFallback.setLogger(console.log.bind(console));
+
+var app = express();
+app.use(historyApiFallback);
+```
