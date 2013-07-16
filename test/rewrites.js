@@ -60,6 +60,17 @@ tests['should ignore file requests'] = function (test) {
 };
 
 
+tests['should take JSON preference into account'] = function (test) {
+  req.headers.accept = 'application/json, text/plain, */*';
+
+  historyApiFallback(req, null, next);
+
+  test.equal(req.url, requestedUrl);
+  test.ok(nextCalled);
+  test.done();
+};
+
+
 tests['should rewrite valid requests'] = function (test) {
   historyApiFallback(req, null, next);
 
