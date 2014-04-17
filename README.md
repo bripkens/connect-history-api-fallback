@@ -25,7 +25,7 @@ fulfils the following criteria:
 The middleware is available through NPM and can easily be added.
 
 ```
-npm install --save history-api-fallback
+npm install --save connect-history-api-fallback
 ```
 
 Now you only need to add the middleware to your application like so
