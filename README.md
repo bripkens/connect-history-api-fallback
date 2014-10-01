@@ -30,7 +30,7 @@ npm install --save connect-history-api-fallback
 
 Now you only need to add the middleware to your application like so
 
-```
+```javascript
 var connect = require('connect');
 var historyApiFallback = require('connect-history-api-fallback');
 
@@ -41,7 +41,7 @@ var app = connect()
 
 Of course you can also use this piece of middleware with express:
 
-```
+```javascript
 var express = require('express');
 var historyApiFallback = require('connect-history-api-fallback');
 
@@ -51,7 +51,7 @@ app.use(historyApiFallback);
 
 Activate logging of rewrite reasons:
 
-```
+```javascript
 var historyApiFallback = require('connect-history-api-fallback');
 historyApiFallback.setLogger(console.log.bind(console));
 
