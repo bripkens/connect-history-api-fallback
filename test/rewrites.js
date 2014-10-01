@@ -74,8 +74,27 @@ tests['should take JSON preference into account'] = function (test) {
 tests['should rewrite valid requests'] = function (test) {
   historyApiFallback(req, null, next);
 
-
   test.equal(req.url, '/index.html');
+  test.ok(nextCalled);
+  test.done();
+};
+
+tests['should not fail for missing HTTP accept header'] = function (test) {
+  delete req.headers.accept;
+
+  historyApiFallback(req, null, next);
+
+  test.equal(req.url, requestedUrl);
+  test.ok(nextCalled);
+  test.done();
+};
+
+tests['should not fail for missing headers object'] = function (test) {
+  delete req.headers;
+
+  historyApiFallback(req, null, next);
+
+  test.equal(req.url, requestedUrl);
   test.ok(nextCalled);
   test.done();
 };
