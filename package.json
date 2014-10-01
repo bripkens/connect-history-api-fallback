@@ -1,6 +1,6 @@
 {
   "name": "connect-history-api-fallback",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used.",
   "keyswords": ["connect", "html5", "history api", "fallback", "spa"],
   "engines": {
