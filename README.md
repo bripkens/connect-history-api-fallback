@@ -17,8 +17,9 @@ fulfils the following criteria:
 
  1. The request is a GET request
  2. which accepts `text/html` and
- 3. is not a direct file request, i.e. the requested path does not contain a
-    `.` (DOT) character.
+ 3. is not a direct file request, i.e. the requested path does not contain a `.` (DOT) character.
+ 
+Note: the last rule can be overwritten by the `fallbackToIndexForUrlsWithDots` configuration (see last use case below).
 
 ## Usage
 
@@ -57,4 +58,15 @@ historyApiFallback.setLogger(console.log.bind(console));
 
 var app = express();
 app.use(historyApiFallback);
+```
+
+Support URLs with dots:
+
+```javascript
+var historyApiFallback = require('connect-history-api-fallback');
+
+var appBaseDirectory = './app'; // Application Base directory
+
+var app = express();
+app.use(historyApiFallback.fallbackToIndexForUrlsWithDots(true, appBaseDirectory)); 
 ```
