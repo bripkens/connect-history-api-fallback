@@ -1,41 +1,50 @@
-# history-api-fallback [![Build Status](https://secure.travis-ci.org/bripkens/connect-history-api-fallback.png?branch=master)](http://travis-ci.org/bripkens/connect-history-api-fallback)
+<h1 align="center">connect-history-api-fallback</h1>
+<p align="center">Middleware to proxy requests through a specified index page, useful for Single Page Applications that utilise the HTML5 History API.</p>
 
-Single page applications typically only have one file that is directly
-accessible by web browsers: The `index.html`. Navigation in the application
+## Introduction
+
+Single Page Applications (SPA) typically only utilise one index file that is
+accessible by web browsers: usually `index.html`. Navigation in the application
 is then commonly handled using JavaScript with the help of the
-[HTML 5 history API](http://www.w3.org/html/wg/drafts/html/master/single-page.html#the-history-interface).
+[HTML5 History API](http://www.w3.org/html/wg/drafts/html/master/single-page.html#the-history-interface).
 This results in issues when the user hits the refresh button or is directly
-accessing a page other than the landing page, e.g. `/impress` or
-`/bripkens/history-api-fallback`, as the web server is then trying to retrieve
-a file which is existing at this location. As your application is a SPA, the
-web server will fail trying to retrieve the file and return a *404 - Not Found*
+accessing a page other than the landing page, e.g. `/help` or `/help/online`
+as the web server bypasses the index file to locate the file at this location. 
+As your application is a SPA, the web server will fail trying to retrieve the file and return a *404 - Not Found*
 message to the user.
 
 This tiny middleware addresses some of the issues. Specifically, it will change
-the requested location to `index.html` whenever there is a request which
-fulfils the following criteria:
+the requested location to the index you specify (default being `index.html`)
+whenever there is a request which fulfils the following criteria:
 
  1. The request is a GET request
- 2. which accepts `text/html` and
+ 2. which accepts `text/html`,
  3. is not a direct file request, i.e. the requested path does not contain a
-    `.` (DOT) character.
+    `.` (DOT) character and
+ 4. does not match a pattern provided in options.rewrites (see options below)
 
 ## Usage
 
 The middleware is available through NPM and can easily be added.
 
 ```
-npm install --save connect-history-api-fallback
+npm install --save-dev connect-history-api-fallback
+```
+
+Import the library
+
+```javascript
+var history = require('connect-history-api-fallback');
 ```
 
 Now you only need to add the middleware to your application like so
 
 ```javascript
 var connect = require('connect');
-var historyApiFallback = require('connect-history-api-fallback');
+var middleware = history();
 
 var app = connect()
-  .use(historyApiFallback)
+  .use(middleware)
   .listen(3000);
 ```
 
@@ -43,18 +52,56 @@ Of course you can also use this piece of middleware with express:
 
 ```javascript
 var express = require('express');
-var historyApiFallback = require('connect-history-api-fallback');
+var middleware = history();
 
 var app = express();
-app.use(historyApiFallback);
+app.use(middleware);
 ```
 
-Activate logging of rewrite reasons:
+## Options
+
+You can optionally pass options to the library when obtaining the middleware
 
 ```javascript
-var historyApiFallback = require('connect-history-api-fallback');
-historyApiFallback.setLogger(console.log.bind(console));
+var options = {};
+var middleware = history({});
+```
 
-var app = express();
-app.use(historyApiFallback);
+### index
+
+Override the index (default `index.html`)
+
+```javascript
+var middleware = history({
+  index: 'default.html'
+});
+```
+
+### rewrites
+
+Override the index when the request url matches a regex pattern
+
+```javascript
+var middleware = history({
+  rewrites: [
+    { pattern: '/soccer', target: '/soccer.html'},
+    { pattern: '/tennis', target: '/tennis.html'},
+});
+```
+
+### verbose
+
+Output logging (default `false`)
+
+```javascript
+var middleware = history({
+  verbose: true
+});
+```
+
+Alternatively use your own logger
+
+```javascript
+var middleware = history();
+history.setLogger(console.log.bind(console));
 ```

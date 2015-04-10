@@ -1,6 +1,6 @@
 {
   "name": "connect-history-api-fallback",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used.",
   "keyswords": ["connect", "html5", "history api", "fallback", "spa"],
   "engines": {
@@ -19,6 +19,9 @@
     "email": "bripkens.dev@gmail.com",
     "url": "http://bripkens.de"
   },
+  "contributors": [
+    "Craig Myles <cr@igmyles.com> (http://www.craigmyles.com)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.1",
