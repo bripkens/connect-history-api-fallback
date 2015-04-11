@@ -43,10 +43,9 @@ Now you only need to add the middleware to your application like so
 
 ```javascript
 var connect = require('connect');
-var middleware = history();
 
 var app = connect()
-  .use(middleware)
+  .use(history())
   .listen(3000);
 ```
 
@@ -54,14 +53,12 @@ Of course you can also use this piece of middleware with express:
 
 ```javascript
 var express = require('express');
-var middleware = history();
 
 var app = express();
-app.use(middleware);
+app.use(history());
 ```
 
 ## Options
-
 You can optionally pass options to the library when obtaining the middleware
 
 ```javascript
@@ -70,21 +67,19 @@ var middleware = history({});
 ```
 
 ### index
-
 Override the index (default `index.html`)
 
 ```javascript
-var middleware = history({
+history({
   index: 'default.html'
 });
 ```
 
 ### rewrites
-
 Override the index when the request url matches a regex pattern
 
 ```javascript
-var middleware = history({
+history({
   rewrites: [
     { pattern: '/soccer', target: '/soccer.html'},
     { pattern: '/tennis', target: '/tennis.html'},
@@ -92,11 +87,10 @@ var middleware = history({
 ```
 
 ### verbose
-
-Output logging (default `false`)
+This middleware does not log any information by default. If you wish to activate logging, then you can do so via the `verbose` option or by specifying a logger function.
 
 ```javascript
-var middleware = history({
+history({
   verbose: true
 });
 ```
@@ -104,6 +98,7 @@ var middleware = history({
 Alternatively use your own logger
 
 ```javascript
-var middleware = history();
-history.setLogger(console.log.bind(console));
+history({
+  logger: console.log.bind(console)
+});
 ```
