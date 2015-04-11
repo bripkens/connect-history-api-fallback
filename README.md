@@ -64,7 +64,6 @@ app.use(history());
 You can optionally pass options to the library when obtaining the middleware
 
 ```javascript
-var options = {};
 var middleware = history({});
 ```
 
