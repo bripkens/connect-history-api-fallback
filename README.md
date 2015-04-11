@@ -1,6 +1,8 @@
 <h1 align="center">connect-history-api-fallback</h1>
 <p align="center">Middleware to proxy requests through a specified index page, useful for Single Page Applications that utilise the HTML5 History API.</p>
 
+[![Build Status](https://travis-ci.org/bripkens/connect-history-api-fallback.svg?branch=master)](https://travis-ci.org/bripkens/connect-history-api-fallback)
+
 ## Introduction
 
 Single Page Applications (SPA) typically only utilise one index file that is
