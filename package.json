@@ -14,7 +14,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "eslint lib/index.js test/rewrites.js && grunt"
+    "test": "eslint lib/index.js test/rewrites.js && nodeunit test/rewrites.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^0.18.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-nodeunit": "~0.1.2"
+    "nodeunit": "^0.9.1"
   }
 }
