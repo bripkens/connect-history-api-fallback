@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/bripkens/connect-history-api-fallback.svg?branch=master)](https://travis-ci.org/bripkens/connect-history-api-fallback)
 
+[![NPM](https://nodei.co/npm/connect-history-api-fallback.png?downloads=true&downloadRank=true)](https://nodei.co/npm/connect-history-api-fallback/)
+
 ## Introduction
 
 Single Page Applications (SPA) typically only utilise one index file that is
