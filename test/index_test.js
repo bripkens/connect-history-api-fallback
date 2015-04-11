@@ -126,3 +126,18 @@ tests['should work with a custom logger'] = function(test) {
   test.ok(logger.calledOnce);
   test.done();
 };
+
+tests['should rewrite requested path according to rules'] = function(test) {
+  req.url = '/soccer';
+  middleware = historyApiFallback({
+    rewrites: [
+      {from: /\/soccer/, to: '/soccer.html'}
+    ]
+  });
+
+  middleware(req, null, next);
+
+  test.equal(req.url, '/soccer.html');
+  test.ok(next.called);
+  test.done();
+};
