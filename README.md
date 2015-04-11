@@ -9,7 +9,7 @@ is then commonly handled using JavaScript with the help of the
 [HTML5 History API](http://www.w3.org/html/wg/drafts/html/master/single-page.html#the-history-interface).
 This results in issues when the user hits the refresh button or is directly
 accessing a page other than the landing page, e.g. `/help` or `/help/online`
-as the web server bypasses the index file to locate the file at this location. 
+as the web server bypasses the index file to locate the file at this location.
 As your application is a SPA, the web server will fail trying to retrieve the file and return a *404 - Not Found*
 message to the user.
 
@@ -28,7 +28,7 @@ whenever there is a request which fulfils the following criteria:
 The middleware is available through NPM and can easily be added.
 
 ```
-npm install --save-dev connect-history-api-fallback
+npm install --save connect-history-api-fallback
 ```
 
 Import the library
