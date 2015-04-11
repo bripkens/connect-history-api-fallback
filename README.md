@@ -81,8 +81,9 @@ Override the index when the request url matches a regex pattern
 ```javascript
 history({
   rewrites: [
-    { pattern: '/soccer', target: '/soccer.html'},
-    { pattern: '/tennis', target: '/tennis.html'},
+    { from: /\/soccer/, to: '/soccer.html'},
+    { from: /\/tennis/, to: '/tennis.html'}
+  ]
 });
 ```
 
