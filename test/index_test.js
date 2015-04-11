@@ -2,15 +2,16 @@
 
 var sinon = require('sinon');
 var historyApiFallback = require('../lib');
-var middleware = historyApiFallback();
 
 var tests = module.exports = {};
 
+var middleware;
 var req = null;
 var requestedUrl;
 var next;
 
 tests.setUp = function(done) {
+  middleware = historyApiFallback();
   requestedUrl = '/foo';
   req = {
     method: 'GET',
@@ -138,6 +139,35 @@ tests['should rewrite requested path according to rules'] = function(test) {
   middleware(req, null, next);
 
   test.equal(req.url, '/soccer.html');
+  test.ok(next.called);
+  test.done();
+};
+
+tests['should test rewrite rules'] = function(test) {
+  req.url = '/socer';
+  middleware = historyApiFallback({
+    rewrites: [
+      {from: /\/soccer/, to: '/soccer.html'}
+    ]
+  });
+
+  middleware(req, null, next);
+
+  test.equal(req.url, '/index.html');
+  test.ok(next.called);
+  test.done();
+};
+
+tests['should support custom index file'] = function(test) {
+  var index = 'default.html';
+  req.url = '/socer';
+  middleware = historyApiFallback({
+    index: index
+  });
+
+  middleware(req, null, next);
+
+  test.equal(req.url, index);
   test.ok(next.called);
   test.done();
 };
