@@ -1,3 +1,5 @@
+'use strict';
+
 var historyApiFallback = require('../lib');
 var middleware = historyApiFallback();
 

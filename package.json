@@ -2,17 +2,23 @@
   "name": "connect-history-api-fallback",
   "version": "0.2.0",
   "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used.",
-  "keyswords": ["connect", "html5", "history api", "fallback", "spa"],
+  "keyswords": [
+    "connect",
+    "html5",
+    "history api",
+    "fallback",
+    "spa"
+  ],
   "engines": {
     "node": ">=0.8"
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "grunt"
+    "test": "eslint lib/index.js test/rewrites.js && grunt"
   },
   "repository": {
-    "type" : "git",
-    "url" : "http://github.com/bripkens/connect-history-api-fallback.git"
+    "type": "git",
+    "url": "http://github.com/bripkens/connect-history-api-fallback.git"
   },
   "author": {
     "name": "Ben Ripkens",
@@ -24,6 +30,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^0.18.0",
     "grunt": "~0.4.1",
     "grunt-contrib-nodeunit": "~0.1.2"
   }
