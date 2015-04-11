@@ -1,4 +1,5 @@
 var historyApiFallback = require('../lib');
+var middleware = historyApiFallback();
 
 var tests = module.exports = {};
 
@@ -29,7 +30,7 @@ tests.setUp = function (done) {
   tests['should ignore ' + method + ' requests'] = function (test) {
     req.method = method;
 
-    historyApiFallback(req, null, next);
+    middleware(req, null, next);
 
     test.equal(req.url, requestedUrl);
     test.ok(nextCalled);
@@ -41,7 +42,7 @@ tests.setUp = function (done) {
 tests['should ignore requests that do not accept html'] = function (test) {
   req.headers.accept = 'application/json';
 
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, requestedUrl);
   test.ok(nextCalled);
@@ -52,7 +53,7 @@ tests['should ignore requests that do not accept html'] = function (test) {
 tests['should ignore file requests'] = function (test) {
   var expected = req.url = 'js/app.js';
 
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, expected);
   test.ok(nextCalled);
@@ -63,7 +64,7 @@ tests['should ignore file requests'] = function (test) {
 tests['should take JSON preference into account'] = function (test) {
   req.headers.accept = 'application/json, text/plain, */*';
 
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, requestedUrl);
   test.ok(nextCalled);
@@ -72,7 +73,7 @@ tests['should take JSON preference into account'] = function (test) {
 
 
 tests['should rewrite valid requests'] = function (test) {
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, '/index.html');
   test.ok(nextCalled);
@@ -82,7 +83,7 @@ tests['should rewrite valid requests'] = function (test) {
 tests['should not fail for missing HTTP accept header'] = function (test) {
   delete req.headers.accept;
 
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, requestedUrl);
   test.ok(nextCalled);
@@ -92,7 +93,7 @@ tests['should not fail for missing HTTP accept header'] = function (test) {
 tests['should not fail for missing headers object'] = function (test) {
   delete req.headers;
 
-  historyApiFallback(req, null, next);
+  middleware(req, null, next);
 
   test.equal(req.url, requestedUrl);
   test.ok(nextCalled);
