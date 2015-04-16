@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.1.0
  - Rewrite rules are now applied before the request URL is checked for dots.
  - Rewrite rules can be defined as functions to have greater control over the `dot rule`.
 
