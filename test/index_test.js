@@ -143,6 +143,32 @@ tests['should rewrite requested path according to rules'] = function(test) {
   test.done();
 };
 
+tests['should support functions as rewrite rule'] = function(test) {
+  middleware = historyApiFallback({
+    rewrites: [
+      {
+        from: /^\/libs\/(.*)$/,
+        to: function(context) {
+          return './bower_components' + context.parsedUrl.pathname;
+        }
+      }
+    ]
+  });
+
+  req.url = '/libs/jquery/jquery.1.12.0.min.js';
+  middleware(req, null, next);
+  test.equal(req.url, './bower_components/libs/jquery/jquery.1.12.0.min.js');
+  test.ok(next.called);
+
+  next = sinon.stub();
+  var expected = req.url = '/js/main.js';
+  middleware(req, null, next);
+  test.equal(req.url, expected);
+  test.ok(next.called);
+
+  test.done();
+};
+
 tests['should test rewrite rules'] = function(test) {
   req.url = '/socer';
   middleware = historyApiFallback({
