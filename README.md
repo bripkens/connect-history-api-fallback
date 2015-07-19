@@ -18,7 +18,7 @@ As your application is a SPA, the web server will fail trying to retrieve the fi
 message to the user.
 
 This tiny middleware addresses some of the issues. Specifically, it will change
-the requested location to the index you specify (default being `index.html`)
+the requested location to the index you specify (default being `/index.html`)
 whenever there is a request which fulfils the following criteria:
 
  1. The request is a GET request
