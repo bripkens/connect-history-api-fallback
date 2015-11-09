@@ -68,11 +68,11 @@ var middleware = history({});
 ```
 
 ### index
-Override the index (default `index.html`)
+Override the index (default `/index.html`)
 
 ```javascript
 history({
-  index: 'default.html'
+  index: '/default.html'
 });
 ```
 
