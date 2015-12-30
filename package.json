@@ -1,8 +1,9 @@
 {
-  "name": "connect-history-api-fallback",
-  "version": "1.1.0",
-  "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used.",
+  "name": "koa-connect-history-api-fallback",
+  "version": "0.1.0",
+  "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used for Koa.",
   "keyswords": [
+    "koa",
     "connect",
     "html5",
     "history api",
@@ -14,24 +15,19 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "eslint lib/index.js test/index_test.js && nodeunit test/index_test.js"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/bripkens/connect-history-api-fallback.git"
+    "url": "https://github.com/dalhorinek/koa-connect-history-api-fallback.git"
   },
   "author": {
-    "name": "Ben Ripkens",
-    "email": "bripkens.dev@gmail.com",
-    "url": "http://bripkens.de"
+    "name": "Dalibor Horinek",
+    "email": "dal@horinek.net",
+    "url": "http://www.horinek.net"
   },
   "contributors": [
+    "Ben Ripkens <bripkens.dev@gmail.com> (http://bripkens.de)",
     "Craig Myles <cr@igmyles.com> (http://www.craigmyles.com)"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^0.18.0",
-    "nodeunit": "^0.9.1",
-    "sinon": "^1.14.1"
-  }
+  "license": "MIT"
 }
