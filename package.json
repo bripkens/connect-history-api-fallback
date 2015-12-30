@@ -17,7 +17,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/dalhorinek/koa-connect-history-api-fallback.git"
+    "url": "https://github.com/dalhorinek/koa-history-api-fallback.git"
   },
   "author": {
     "name": "Dalibor Horinek",
