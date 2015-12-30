@@ -12,7 +12,7 @@ This is simple rewrite of [connect-history-api-fallback](https://github.com/brip
 The middleware is available through NPM and can easily be added.
 
 ```
-npm install --save koa-connect-history-api-fallback
+npm install --save koa-history-api-fallback
 ```
 
 Import the library
