@@ -1,6 +1,6 @@
 {
   "name": "koa-history-api-fallback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used for Koa.",
   "keyswords": [
     "koa",
@@ -14,8 +14,7 @@
     "node": ">=0.8"
   },
   "main": "lib/index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/dalhorinek/koa-connect-history-api-fallback.git"
