@@ -1,6 +1,6 @@
 {
   "name": "koa-history-api-fallback",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Provides a fallback for non-existing directories so that the HTML 5 history API can be used for Koa.",
   "keyswords": [
     "koa",
