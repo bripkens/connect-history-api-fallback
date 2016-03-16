@@ -125,3 +125,12 @@ history({
   logger: console.log.bind(console)
 });
 ```
+
+### htmlAcceptHeaders
+Override the default `Accepts:` headers that are queried when matching HTML content requests (Default: `['text/html', '*/*']`).
+
+```javascript
+history({
+  htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
+})
+```
