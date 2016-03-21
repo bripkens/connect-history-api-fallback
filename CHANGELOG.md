@@ -1,7 +1,7 @@
 # Changelog
 
-## v1.?.?
- - New `htmlAcceptHeaders` option (see `README.md`).
+## v1.2.0
+ - Support definition of custom HTML `Accept` header values. Contributed by @cgmartin.
 
 ## v1.1.0
  - Rewrite rules are now applied before the request URL is checked for dots.
