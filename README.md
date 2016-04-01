@@ -84,6 +84,7 @@ Ignore a list of directories so requests for your assets don't result in a redir
 history({
   ignorePaths:['/lib/','/app/']
 });
+```
 
 ### rewrites
 Override the index when the request url matches a regex pattern. You can either rewrite to a static string or use a function to transform the incoming request.
