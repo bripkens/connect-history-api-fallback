@@ -210,3 +210,28 @@ tests['should accept html requests based on headers option'] = function(test) {
   test.ok(next.called);
   test.done();
 };
+
+tests['should support custom rewrite rules'] = function(test) {
+  req.headers.accept = '*/*';
+  var url = '/app/login/app.js';
+  req.url = url;
+  middleware = historyApiFallback({
+    rewrites: [
+      {
+        from: /\/app\/login/,
+        to: function onMatch(ctx) {
+          if (ctx.parsedUrl.path.indexOf('.js')) {
+            return ctx.parsedUrl.href;
+          }
+          return '/app/login/index.html';
+        }
+      }
+    ]
+  });
+
+  middleware(req, null, next);
+
+  test.equal(req.url, url);
+  test.ok(next.called);
+  test.done();
+};
