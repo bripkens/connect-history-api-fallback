@@ -61,6 +61,19 @@ tests['should ignore file requests'] = function(test) {
 };
 
 
+tests['should rewrite requests when the . rule is disabled'] = function(test) {
+  req.url = 'js/app.js';
+  middleware = historyApiFallback({
+    disableDotRule: true
+  });
+  middleware(req, null, next);
+
+  test.equal(req.url, '/index.html');
+  test.ok(next.called);
+  test.done();
+};
+
+
 tests['should take JSON preference into account'] = function(test) {
   req.headers.accept = 'application/json, text/plain, */*';
 

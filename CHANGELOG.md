@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+ - Allow disabling of the `.` (DOT) rule via the `disableDotRule` option.
+
 ## v1.2.0
  - Support definition of custom HTML `Accept` header values. Contributed by @cgmartin.
 
