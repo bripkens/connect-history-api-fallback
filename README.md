@@ -6,6 +6,22 @@
 
 [![NPM](https://nodei.co/npm/connect-history-api-fallback.png?downloads=true&downloadRank=true)](https://nodei.co/npm/connect-history-api-fallback/)
 
+
+<h2>Table of Contents</h2>
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Options](#options)
+	- [index](#index)
+	- [rewrites](#rewrites)
+	- [verbose](#verbose)
+	- [htmlAcceptHeaders](#htmlacceptheaders)
+	- [disableDotRule](#disabledotrule)
+
+<!-- /TOC -->
+
 ## Introduction
 
 Single Page Applications (SPA) typically only utilise one index file that is
