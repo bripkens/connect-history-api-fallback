@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.3.0
  - Allow disabling of the `.` (DOT) rule via the `disableDotRule` option.
 
 ## v1.2.0
