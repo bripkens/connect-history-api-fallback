@@ -1,0 +1,17 @@
+{
+  "name": "static-files-and-index-rewrite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "opn http://localhost:5555/users/5.json && node ."
+  },
+  "author": "Ben Ripkens <bripkens@gmail.com> (http://bripkens.de/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.14.0"
+  },
+  "devDependencies": {
+    "opn-cli": "3.1.0"
+  }
+}
