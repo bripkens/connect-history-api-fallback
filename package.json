@@ -13,6 +13,7 @@
     "node": ">=0.8"
   },
   "main": "lib/index.js",
+  "files": ["lib"],
   "scripts": {
     "test": "eslint lib/index.js test/index_test.js && nodeunit test/index_test.js"
   },
