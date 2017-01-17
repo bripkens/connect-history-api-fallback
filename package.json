@@ -31,8 +31,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^0.18.0",
-    "nodeunit": "^0.9.1",
+    "eslint": "^3.13.1",
+    "nodeunit": "^0.10.2",
     "sinon": "^1.14.1"
   }
 }
