@@ -156,6 +156,36 @@ tests['should rewrite requested path according to rules'] = function(test) {
   test.done();
 };
 
+tests['should rewrite using positional parameters'] = function(test) {
+    req.url = '/soccer';
+    middleware = historyApiFallback({
+        rewrites: [
+            {from: /\/(soccer)/, to: '/$1.html'}
+        ]
+    });
+
+    middleware(req, null, next);
+
+    test.equal(req.url, '/soccer.html');
+    test.ok(next.called);
+    test.done();
+};
+
+tests['should rewrite using more than one positional'] = function(test) {
+    req.url = '/soccer/play';
+    middleware = historyApiFallback({
+        rewrites: [
+            {from: /\/(soccer)\/([^\/]+)/, to: '/$2-$1.html'}
+        ]
+    });
+
+    middleware(req, null, next);
+
+    test.equal(req.url, '/play-soccer.html');
+    test.ok(next.called);
+    test.done();
+};
+
 tests['should support functions as rewrite rule'] = function(test) {
   middleware = historyApiFallback({
     rewrites: [
