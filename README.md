@@ -105,6 +105,17 @@ history({
 });
 ```
 
+You can use positional parameters like $1, $2, $3.
+The following will rewrite a request that matches the `/soccer/123` pattern to `/soccer-123.html`.
+
+```javascript
+history({
+  rewrites: [
+    { from: /^\/soccer\/([^\/]+)/, to: '/soccer-$1.html'}
+  ]
+});
+```
+
 Alternatively functions can be used to have more control over the rewrite process. For instance, the following listing shows how requests to `/libs/jquery/jquery.1.12.0.min.js` and the like can be routed to `./bower_components/libs/jquery/jquery.1.12.0.min.js`. You can also make use of this if you have an API version in the URL path.
 ```javascript
 history({
