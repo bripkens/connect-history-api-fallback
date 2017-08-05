@@ -19,6 +19,7 @@
 	- [verbose](#verbose)
 	- [htmlAcceptHeaders](#htmlacceptheaders)
 	- [disableDotRule](#disabledotrule)
+    - [whitelist](#whitelist)
 
 <!-- /TOC -->
 
@@ -159,5 +160,16 @@ Disables the dot rule mentioned above:
 ```javascript
 history({
   disableDotRule: true
+})
+```
+
+### whitelist
+Doesn't rewrite routes if they're in the whitelist. The following will not rewrite any request starting the with the path `/api`.
+
+```javascript
+history({
+  whitelist: [
+    '/api'
+  ]
 })
 ```
