@@ -248,3 +248,21 @@ tests['should support custom rewrite rules'] = function(test) {
   test.ok(next.called);
   test.done();
 };
+
+tests['should not rewrite routes from the whitelist'] = function(test) {
+    req.headers.accept = '*/*';
+    var url = '/api/user/32';
+    req.url = url;
+    middleware = historyApiFallback({
+        whitelist: [
+            '/api',
+        ],
+        verbose: true
+    });
+
+    middleware(req, null, next);
+
+    test.equal(req.url, url);
+    test.ok(next.called);
+    test.done();
+};
