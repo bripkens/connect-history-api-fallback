@@ -162,7 +162,7 @@ history({
 })
 ```
 
-### Whitelist
+### whitelist
 Doesn't rewrite routes if they're in the whitelist. The following will not rewrite any request starting the with the path `/api`.
 
 ```javascript
