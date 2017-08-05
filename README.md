@@ -19,6 +19,7 @@
 	- [verbose](#verbose)
 	- [htmlAcceptHeaders](#htmlacceptheaders)
 	- [disableDotRule](#disabledotrule)
+    - [whitelist](#whitelist)
 
 <!-- /TOC -->
 

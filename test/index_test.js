@@ -255,9 +255,8 @@ tests['should not rewrite routes from the whitelist'] = function(test) {
     req.url = url;
     middleware = historyApiFallback({
         whitelist: [
-            '/api',
-        ],
-        verbose: true
+            '/api'
+        ]
     });
 
     middleware(req, null, next);
