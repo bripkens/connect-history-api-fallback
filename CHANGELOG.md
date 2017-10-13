@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.4.0
  - The `.` (DOT) rule should only check the last path element. Contributed by @ntkme.
 
 ## v1.3.0
