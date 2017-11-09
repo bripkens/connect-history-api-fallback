@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.5.0
+ - Expose the HTTP request object in rewrite rules. Contributed by @VladShcherbin.
+
 ## v1.4.0
  - The `.` (DOT) rule should only check the last path element. Contributed by @ntkme.
 

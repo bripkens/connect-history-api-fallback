@@ -123,7 +123,7 @@ The function will always be called with a context object that has the following 
 
  - **parsedUrl**: Information about the URL as provided by the [URL module's](https://nodejs.org/api/url.html#url_url_parse_urlstr_parsequerystring_slashesdenotehost) `url.parse`.
  - **match**: An Array of matched results as provided by `String.match(...)`.
- - **req**: Initial `req` object with different request properties.
+ - **request**: The HTTP request object.
 
 
 ### verbose
