@@ -93,6 +93,18 @@ history({
 });
 ```
 
+### excludes
+Exclude some paths from library processing.
+
+The following will exclude all calls to api.
+```javascript
+history({
+  excludes: [
+    /^\/api\//
+  ]
+});
+```
+
 ### rewrites
 Override the index when the request url matches a regex pattern. You can either rewrite to a static string or use a function to transform the incoming request.
 
