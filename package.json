@@ -13,7 +13,9 @@
     "node": ">=0.8"
   },
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "eslint lib/index.js test/index_test.js && nodeunit test/index_test.js"
   },
@@ -32,7 +34,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^0.18.0",
-    "nodeunit": "^0.9.1",
+    "nodeunit": "^0.11.3",
     "sinon": "^1.14.1"
   }
 }
