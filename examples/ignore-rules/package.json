@@ -1,5 +1,5 @@
 {
-  "name": "static-files-and-index-rewrite",
+  "name": "ignore-rules",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
