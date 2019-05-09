@@ -85,7 +85,9 @@ var middleware = history({});
 ```
 
 ### index
-Override the index (default `/index.html`)
+Override the index (default `/index.html`). This is the request path that will be used when the middleware identifies that the request path needs to be rewritten.
+
+This is not the path to a file on disk. Instead it is the HTTP request path. Downstream connect/express middleware is responsible to turn this rewritten HTTP request path into actual responses, e.g. by reading a file from disk.
 
 ```javascript
 history({
