@@ -217,7 +217,7 @@ tests['should support custom index file'] = function(test) {
 
   middleware(req, null, next);
 
-  test.equal(req.url, index);
+  test.equal(req.url, '/' + index);
   test.ok(next.called);
   test.done();
 };
