@@ -18,5 +18,5 @@ app.get('/users/5.json', (req, res) => {
 
 const port = 5555;
 app.listen(port, () => {
-  console.log(`Example app listening on port ${5555}!`);
+  console.log(`Example app listening on port ${port}!`);
 });
