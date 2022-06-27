@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.0
+ - **Potentially breaking:** Treat HTTP `HEAD` requests like HTTP `GET` requests. This one is potentially breaking and we therefore released a new major version to be on the safe side. Most projects should not encounter issues when upgrading to this version. Contributed by @awwit.
+
 ## v1.6.0
  - Recommend absolute paths for rewrite targets. Contributed by @helfi92.
 
