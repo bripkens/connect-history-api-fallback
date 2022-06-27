@@ -1,12 +1,6 @@
 <h1 align="center">connect-history-api-fallback</h1>
 <p align="center">Middleware to proxy requests through a specified index page, useful for Single Page Applications that utilise the HTML5 History API.</p>
 
-[![Build Status](https://travis-ci.org/bripkens/connect-history-api-fallback.svg?branch=master)](https://travis-ci.org/bripkens/connect-history-api-fallback)
-[![Dependency Status](https://david-dm.org/bripkens/connect-history-api-fallback/master.svg)](https://david-dm.org/bripkens/connect-history-api-fallback/master)
-
-[![NPM](https://nodei.co/npm/connect-history-api-fallback.png?downloads=true&downloadRank=true)](https://nodei.co/npm/connect-history-api-fallback/)
-
-
 <h2>Table of Contents</h2>
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
