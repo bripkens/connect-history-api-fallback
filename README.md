@@ -16,7 +16,7 @@
 
 <!-- /TOC -->
 
-## Introduction
+## Introduction to a single apps
 
 Single Page Applications (SPA) typically only utilise one index file that is
 accessible by web browsers: usually `index.html`. Navigation in the application
